@@ -1,119 +1,123 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import javax.swing.*;
 
-public class First extends Frame
+public class First extends JFrame
 {   
     First()
     {
+    	JPanel container = new JPanel();
+    	JScrollPane jsp = new JScrollPane();
+    	this.add(jsp);
+    	
         setLayout(new FlowLayout());
         this.setLayout(null);
         
-        // ALL LABELS
-        Label nameLabel = new Label("Name : ",Label.LEFT);
-        Label rollNoLabel = new Label("Roll No. : ",Label.LEFT);
-        Label subjectLabel = new Label("Subject : ",Label.LEFT);
-        Label explicitCurriculumLabel = new Label("EXPLICIT CURRICULUM",Label.LEFT);
-        Label eLabel1 = new Label("1. Teacher is prepared for class : ",Label.LEFT);
-        Label eLabel2 = new Label("2. Teacher knows His/Her Subject : ",Label.LEFT);
-        Label eLabel3 = new Label("3. Teacher is Organised and neet : ",Label.LEFT);
-        Label eLabel4 = new Label("4. Teacher Plans class time and Assignments : ",Label.LEFT);
-        Label eLabel5 = new Label("5. Teacher is flexible : ",Label.LEFT);
-        Label eLabel6 = new Label("6. Teacher is clear about assignments and test : ",Label.LEFT);
-        Label eLabel7 = new Label("7. Teacher allows you to be active in the classroom : ",Label.LEFT);
-        Label eLabel8 = new Label("8. Teacher manages the time well : ",Label.LEFT);
-        Label eLabel9 = new Label("9. Teacher returns homework in a timely manner : ",Label.LEFT);
-        Label eLabel10 = new Label("10. Teacher grades Fairly : ",Label.LEFT);
-        Label eLabel11 = new Label("11. I have learned a lot from the teacher about this subject : ",Label.LEFT);
-        Label eLabel12 = new Label("12. Teacher gives good feedback on projects : ",Label.LEFT);
-        Label eLabel13 = new Label("13. Teacher is creative in developing lesson plans : ",Label.LEFT);
-        Label eLabel14 = new Label("14. Teacher encorages students to speak up : ",Label.LEFT);
+        // ALL JLabelS
+        JLabel nameJLabel = new JLabel("Name : ",JLabel.LEFT);
+        JLabel rollNoJLabel = new JLabel("Roll No. : ",JLabel.LEFT);
+        JLabel subjectJLabel = new JLabel("Subject : ",JLabel.LEFT);
+        JLabel explicitCurriculumJLabel = new JLabel("EXPLICIT CURRICULUM",JLabel.LEFT);
+        JLabel eJLabel1 = new JLabel("1. Teacher is prepared for class : ",JLabel.LEFT);
+        JLabel eJLabel2 = new JLabel("2. Teacher knows His/Her Subject : ",JLabel.LEFT);
+        JLabel eJLabel3 = new JLabel("3. Teacher is Organised and neet : ",JLabel.LEFT);
+        JLabel eJLabel4 = new JLabel("4. Teacher Plans class time and Assignments : ",JLabel.LEFT);
+        JLabel eJLabel5 = new JLabel("5. Teacher is flexible : ",JLabel.LEFT);
+        JLabel eJLabel6 = new JLabel("6. Teacher is clear about assignments and test : ",JLabel.LEFT);
+        JLabel eJLabel7 = new JLabel("7. Teacher allows you to be active in the classroom : ",JLabel.LEFT);
+        JLabel eJLabel8 = new JLabel("8. Teacher manages the time well : ",JLabel.LEFT);
+        JLabel eJLabel9 = new JLabel("9. Teacher returns homework in a timely manner : ",JLabel.LEFT);
+        JLabel eJLabel10 = new JLabel("10. Teacher grades Fairly : ",JLabel.LEFT);
+        JLabel eJLabel11 = new JLabel("11. I have learned a lot from the teacher about this subject : ",JLabel.LEFT);
+        JLabel eJLabel12 = new JLabel("12. Teacher gives good feedback on projects : ",JLabel.LEFT);
+        JLabel eJLabel13 = new JLabel("13. Teacher is creative in developing lesson plans : ",JLabel.LEFT);
+        JLabel eJLabel14 = new JLabel("14. Teacher encorages students to speak up : ",JLabel.LEFT);
         
-        Label implicitCurriculumLabel = new Label("IMPLICIT CURRICULUM",Label.LEFT);
-        Label iLabel1 = new Label("15. Teacher follows through on what he/she says : ",Label.LEFT);
-        Label iLabel2 = new Label("16. Teacher listens student's point of view : ",Label.LEFT);
-        Label iLabel3 = new Label("17. Teacher respects the opinions and decision of students : ",Label.LEFT);
-        Label iLabel4 = new Label("18. Teacher accepts responcibility for his/her own mistakes : ",Label.LEFT);
-        Label iLabel5 = new Label("19. Teacher is willing to learn from students : ",Label.LEFT);
-        Label iLabel6 = new Label("20. Teacher is sensitive to the needs of students : ",Label.LEFT);
-        Label iLabel7 = new Label("21. Teacher's words and actions match : ",Label.LEFT);
-        Label iLabel8 = new Label("22. Teacher is fun to be with : ",Label.LEFT);
-        Label iLabel9 = new Label("23. Teacher likes and respects students : ",Label.LEFT);
-        Label iLabel10 = new Label("24. Teacher helps when you ask for help : ",Label.LEFT);
-        Label iLabel11 = new Label("25. Tecaher is consistent and fair in discipline : ",Label.LEFT);
-        Label iLabel12 = new Label("26. I trust this teacher : ",Label.LEFT);
-        Label iLabel13 = new Label("27. Teacher tries to model student's expectations : ",Label.LEFT);
-        Label iLabel14 = new Label("28. Teacher is firm in discipline without being too strict : ",Label.LEFT);
+        JLabel implicitCurriculumJLabel = new JLabel("IMPLICIT CURRICULUM",JLabel.LEFT);
+        JLabel iJLabel1 = new JLabel("15. Teacher follows through on what he/she says : ",JLabel.LEFT);
+        JLabel iJLabel2 = new JLabel("16. Teacher listens student's point of view : ",JLabel.LEFT);
+        JLabel iJLabel3 = new JLabel("17. Teacher respects the opinions and decision of students : ",JLabel.LEFT);
+        JLabel iJLabel4 = new JLabel("18. Teacher accepts responcibility for his/her own mistakes : ",JLabel.LEFT);
+        JLabel iJLabel5 = new JLabel("19. Teacher is willing to learn from students : ",JLabel.LEFT);
+        JLabel iJLabel6 = new JLabel("20. Teacher is sensitive to the needs of students : ",JLabel.LEFT);
+        JLabel iJLabel7 = new JLabel("21. Teacher's words and actions match : ",JLabel.LEFT);
+        JLabel iJLabel8 = new JLabel("22. Teacher is fun to be with : ",JLabel.LEFT);
+        JLabel iJLabel9 = new JLabel("23. Teacher likes and respects students : ",JLabel.LEFT);
+        JLabel iJLabel10 = new JLabel("24. Teacher helps when you ask for help : ",JLabel.LEFT);
+        JLabel iJLabel11 = new JLabel("25. Tecaher is consistent and fair in discipline : ",JLabel.LEFT);
+        JLabel iJLabel12 = new JLabel("26. I trust this teacher : ",JLabel.LEFT);
+        JLabel iJLabel13 = new JLabel("27. Teacher tries to model student's expectations : ",JLabel.LEFT);
+        JLabel iJLabel14 = new JLabel("28. Teacher is firm in discipline without being too strict : ",JLabel.LEFT);
         
-        this.add(nameLabel);
-        this.add(rollNoLabel);
-        this.add(subjectLabel);
-        this.add(explicitCurriculumLabel);
-        this.add(eLabel1);
-        this.add(eLabel2);
-        this.add(eLabel3);
-        this.add(eLabel4);
-        this.add(eLabel5);
-        this.add(eLabel6);
-        this.add(eLabel7);
-        this.add(eLabel8);
-        this.add(eLabel9);
-        this.add(eLabel10);
-        this.add(eLabel11);
-        this.add(eLabel12);
-        this.add(eLabel13);
-        this.add(eLabel14);
-        this.add(implicitCurriculumLabel);
-        this.add(iLabel1);
-        this.add(iLabel2);
-        this.add(iLabel3);
-        this.add(iLabel4);
-        this.add(iLabel5);
-        this.add(iLabel6);
-        this.add(iLabel7);
-        this.add(iLabel8);
-        this.add(iLabel9);
-        this.add(iLabel10);
-        this.add(iLabel11);
-        this.add(iLabel12);
-        this.add(iLabel13);
-        this.add(iLabel14);
+        this.add(nameJLabel);
+        this.add(rollNoJLabel);
+        this.add(subjectJLabel);
+        this.add(explicitCurriculumJLabel);
+        this.add(eJLabel1);
+        this.add(eJLabel2);
+        this.add(eJLabel3);
+        this.add(eJLabel4);
+        this.add(eJLabel5);
+        this.add(eJLabel6);
+        this.add(eJLabel7);
+        this.add(eJLabel8);
+        this.add(eJLabel9);
+        this.add(eJLabel10);
+        this.add(eJLabel11);
+        this.add(eJLabel12);
+        this.add(eJLabel13);
+        this.add(eJLabel14);
+        this.add(implicitCurriculumJLabel);
+        this.add(iJLabel1);
+        this.add(iJLabel2);
+        this.add(iJLabel3);
+        this.add(iJLabel4);
+        this.add(iJLabel5);
+        this.add(iJLabel6);
+        this.add(iJLabel7);
+        this.add(iJLabel8);
+        this.add(iJLabel9);
+        this.add(iJLabel10);
+        this.add(iJLabel11);
+        this.add(iJLabel12);
+        this.add(iJLabel13);
+        this.add(iJLabel14);
         
-        nameLabel.setBounds(70,30,350,20);
-        rollNoLabel.setBounds(70,50,350,20);
-        subjectLabel.setBounds(70,70,350,20);
-        explicitCurriculumLabel.setBounds(70, 90, 350, 20);
-        eLabel1.setBounds(70, 110, 350, 20);
-        eLabel2.setBounds(70, 130, 350, 20);
-        eLabel3.setBounds(70, 150, 350, 20);
-        eLabel4.setBounds(70, 170, 350, 20);
-        eLabel5.setBounds(70, 190, 350, 20);
-        eLabel6.setBounds(70, 210, 350, 20);
-        eLabel7.setBounds(70, 230, 350, 20);
-        eLabel8.setBounds(70, 250, 350, 20);
-        eLabel9.setBounds(70, 270, 350, 20);
-        eLabel10.setBounds(70, 290, 350, 20);
-        eLabel11.setBounds(70, 310, 350, 20);
-        eLabel12.setBounds(70, 330, 350, 20);
-        eLabel13.setBounds(70, 350, 350, 20);
-        eLabel14.setBounds(70, 370, 350, 20);
-        implicitCurriculumLabel.setBounds(70, 390, 350, 20);
-        iLabel1.setBounds(70, 410, 350, 20);
-        iLabel2.setBounds(70, 430, 350, 20);
-        iLabel3.setBounds(70, 450, 350, 20);
-        iLabel4.setBounds(70, 470, 350, 20);
-        iLabel5.setBounds(70, 490, 350, 20);
-        iLabel6.setBounds(70, 510, 350, 20);
-        iLabel7.setBounds(70, 530, 350, 20);
-        iLabel8.setBounds(70, 550, 350, 20);
-        iLabel9.setBounds(70, 570, 350, 20);
-        iLabel10.setBounds(70, 590, 350, 20);
-        iLabel11.setBounds(70, 610, 350, 20);
-        iLabel12.setBounds(70, 630, 350, 20);
-        iLabel13.setBounds(70, 650, 350, 20);
-        iLabel14.setBounds(70, 670, 350, 20);
+        nameJLabel.setBounds(70,0,350,20);
+        rollNoJLabel.setBounds(70,20,350,20);
+        subjectJLabel.setBounds(70,40,350,20);
+        explicitCurriculumJLabel.setBounds(70, 60, 350, 20);
+        eJLabel1.setBounds(70, 80, 350, 20);
+        eJLabel2.setBounds(70, 100, 350, 20);
+        eJLabel3.setBounds(70, 120, 350, 20);
+        eJLabel4.setBounds(70, 140, 350, 20);
+        eJLabel5.setBounds(70, 160, 350, 20);
+        eJLabel6.setBounds(70, 180, 350, 20);
+        eJLabel7.setBounds(70, 200, 350, 20);
+        eJLabel8.setBounds(70, 220, 350, 20);
+        eJLabel9.setBounds(70, 240, 350, 20);
+        eJLabel10.setBounds(70, 260, 350, 20);
+        eJLabel11.setBounds(70, 280, 350, 20);
+        eJLabel12.setBounds(70, 300, 350, 20);
+        eJLabel13.setBounds(70, 320, 350, 20);
+        eJLabel14.setBounds(70, 340, 350, 20);
+        implicitCurriculumJLabel.setBounds(70, 360, 350, 20);
+        iJLabel1.setBounds(70, 380, 350, 20);
+        iJLabel2.setBounds(70, 400, 350, 20);
+        iJLabel3.setBounds(70, 420, 350, 20);
+        iJLabel4.setBounds(70, 440, 350, 20);
+        iJLabel5.setBounds(70, 460, 350, 20);
+        iJLabel6.setBounds(70, 480, 350, 20);
+        iJLabel7.setBounds(70, 500, 350, 20);
+        iJLabel8.setBounds(70, 520, 350, 20);
+        iJLabel9.setBounds(70, 540, 350, 20);
+        iJLabel10.setBounds(70, 560, 350, 20);
+        iJLabel11.setBounds(70, 580, 350, 20);
+        iJLabel12.setBounds(70, 600, 350, 20);
+        iJLabel13.setBounds(70, 620, 350, 20);
+        iJLabel14.setBounds(70, 640, 350, 20);
         
 
         
@@ -123,8 +127,8 @@ public class First extends Frame
         this.add(nameTextField);
         this.add(rollNoTextField);
         
-        nameTextField.setBounds(430,30,100,20);
-        rollNoTextField.setBounds(430,50,100,20);
+        nameTextField.setBounds(430,0,100,20);
+        rollNoTextField.setBounds(430,20,100,20);
         
         Choice sub = new Choice();
         Choice ec1 = new Choice();
@@ -157,65 +161,65 @@ public class First extends Frame
         Choice ic14 = new Choice();
         
         sub.add("TOC"); sub.add("CN"); sub.add(""); sub.add(""); sub.add("");
-        ec1.add("1"); ec1.add("2"); ec1.add("3"); ec1.add("4"); ec1.add("5");
-        ec2.add("1"); ec2.add("2"); ec2.add("3"); ec2.add("4"); ec2.add("5");
-        ec3.add("1"); ec3.add("2"); ec3.add("3"); ec3.add("4"); ec3.add("5");
-        ec4.add("1"); ec4.add("2"); ec4.add("3"); ec4.add("4"); ec4.add("5");
-        ec5.add("1"); ec5.add("2"); ec5.add("3"); ec5.add("4"); ec5.add("5");
-        ec6.add("1"); ec6.add("2"); ec6.add("3"); ec6.add("4"); ec6.add("5");
-        ec7.add("1"); ec7.add("2"); ec7.add("3"); ec7.add("4"); ec7.add("5");
-        ec8.add("1"); ec8.add("2"); ec8.add("3"); ec8.add("4"); ec8.add("5");
-        ec9.add("1"); ec9.add("2"); ec9.add("3"); ec9.add("4"); ec9.add("5");
-        ec10.add("1"); ec10.add("2"); ec10.add("3"); ec10.add("4"); ec10.add("5");
-        ec11.add("1"); ec11.add("2"); ec11.add("3"); ec11.add("4"); ec11.add("5");
-        ec12.add("1"); ec12.add("2"); ec12.add("3"); ec12.add("4"); ec12.add("5");
-        ec13.add("1"); ec13.add("2"); ec13.add("3"); ec13.add("4"); ec13.add("5");
-        ec14.add("1"); ec14.add("2"); ec14.add("3"); ec14.add("4"); ec14.add("5");
+        ec1.add("Strongly Disagree"); ec1.add("Disagree"); ec1.add("Neutral"); ec1.add("Agree"); ec1.add("Strongly Agree");
+        ec2.add("Strongly Disagree"); ec2.add("Disagree"); ec2.add("Neutral"); ec2.add("Agree"); ec2.add("Strongly Agree");
+        ec3.add("Strongly Disagree"); ec3.add("Disagree"); ec3.add("Neutral"); ec3.add("Agree"); ec3.add("Strongly Agree");
+        ec4.add("Strongly Disagree"); ec4.add("Disagree"); ec4.add("Neutral"); ec4.add("Agree"); ec4.add("Strongly Agree");
+        ec5.add("Strongly Disagree"); ec5.add("Disagree"); ec5.add("Neutral"); ec5.add("Agree"); ec5.add("Strongly Agree");
+        ec6.add("Strongly Disagree"); ec6.add("Disagree"); ec6.add("Neutral"); ec6.add("Agree"); ec6.add("Strongly Agree");
+        ec7.add("Strongly Disagree"); ec7.add("Disagree"); ec7.add("Neutral"); ec7.add("Agree"); ec7.add("Strongly Agree");
+        ec8.add("Strongly Disagree"); ec8.add("Disagree"); ec8.add("Neutral"); ec8.add("Agree"); ec8.add("Strongly Agree");
+        ec9.add("Strongly Disagree"); ec9.add("Disagree"); ec9.add("Neutral"); ec9.add("Agree"); ec9.add("Strongly Agree");
+        ec10.add("Strongly Disagree"); ec10.add("Disagree"); ec10.add("Neutral"); ec10.add("Agree"); ec10.add("Strongly Agree");
+        ec11.add("Strongly Disagree"); ec11.add("Disagree"); ec11.add("Neutral"); ec11.add("Agree"); ec11.add("Strongly Agree");
+        ec12.add("Strongly Disagree"); ec12.add("Disagree"); ec12.add("Neutral"); ec12.add("Agree"); ec12.add("Strongly Agree");
+        ec13.add("Strongly Disagree"); ec13.add("Disagree"); ec13.add("Neutral"); ec13.add("Agree"); ec13.add("Strongly Agree");
+        ec14.add("Strongly Disagree"); ec14.add("Disagree"); ec14.add("Neutral"); ec14.add("Agree"); ec14.add("Strongly Agree");
         
-        ic1.add("1"); ic1.add("2"); ic1.add("3"); ic1.add("4"); ic1.add("5");
-        ic2.add("1"); ic2.add("2"); ic2.add("3"); ic2.add("4"); ic2.add("5");
-        ic3.add("1"); ic3.add("2"); ic3.add("3"); ic3.add("4"); ic3.add("5");
-        ic4.add("1"); ic4.add("2"); ic4.add("3"); ic4.add("4"); ic4.add("5");
-        ic5.add("1"); ic5.add("2"); ic5.add("3"); ic5.add("4"); ic5.add("5");
-        ic6.add("1"); ic6.add("2"); ic6.add("3"); ic6.add("4"); ic6.add("5");
-        ic7.add("1"); ic7.add("2"); ic7.add("3"); ic7.add("4"); ic7.add("5");
-        ic8.add("1"); ic8.add("2"); ic8.add("3"); ic8.add("4"); ic8.add("5");
-        ic9.add("1"); ic9.add("2"); ic9.add("3"); ic9.add("4"); ic9.add("5");
-        ic10.add("1"); ic10.add("2"); ic10.add("3"); ic10.add("4"); ic10.add("5");
-        ic11.add("1"); ic11.add("2"); ic11.add("3"); ic11.add("4"); ic11.add("5");
-        ic12.add("1"); ic12.add("2"); ic12.add("3"); ic12.add("4"); ic12.add("5");
-        ic13.add("1"); ic13.add("2"); ic13.add("3"); ic13.add("4"); ic13.add("5");
-        ic14.add("1"); ic14.add("2"); ic14.add("3"); ic14.add("4"); ic14.add("5");
+        ic1.add("Strongly Disagree"); ic1.add("Disagree"); ic1.add("Neutral"); ic1.add("Agree"); ic1.add("Strongly Agree");
+        ic2.add("Strongly Disagree"); ic2.add("Disagree"); ic2.add("Neutral"); ic2.add("Agree"); ic2.add("Strongly Agree");
+        ic3.add("Strongly Disagree"); ic3.add("Disagree"); ic3.add("Neutral"); ic3.add("Agree"); ic3.add("Strongly Agree");
+        ic4.add("Strongly Disagree"); ic4.add("Disagree"); ic4.add("Neutral"); ic4.add("Agree"); ic4.add("Strongly Agree");
+        ic5.add("Strongly Disagree"); ic5.add("Disagree"); ic5.add("Neutral"); ic5.add("Agree"); ic5.add("Strongly Agree");
+        ic6.add("Strongly Disagree"); ic6.add("Disagree"); ic6.add("Neutral"); ic6.add("Agree"); ic6.add("Strongly Agree");
+        ic7.add("Strongly Disagree"); ic7.add("Disagree"); ic7.add("Neutral"); ic7.add("Agree"); ic7.add("Strongly Agree");
+        ic8.add("Strongly Disagree"); ic8.add("Disagree"); ic8.add("Neutral"); ic8.add("Agree"); ic8.add("Strongly Agree");
+        ic9.add("Strongly Disagree"); ic9.add("Disagree"); ic9.add("Neutral"); ic9.add("Agree"); ic9.add("Strongly Agree");
+        ic10.add("Strongly Disagree"); ic10.add("Disagree"); ic10.add("Neutral"); ic10.add("Agree"); ic10.add("Strongly Agree");
+        ic11.add("Strongly Disagree"); ic11.add("Disagree"); ic11.add("Neutral"); ic11.add("Agree"); ic11.add("Strongly Agree");
+        ic12.add("Strongly Disagree"); ic12.add("Disagree"); ic12.add("Neutral"); ic12.add("Agree"); ic12.add("Strongly Agree");
+        ic13.add("Strongly Disagree"); ic13.add("Disagree"); ic13.add("Neutral"); ic13.add("Agree"); ic13.add("Strongly Agree");
+        ic14.add("Strongly Disagree"); ic14.add("Disagree"); ic14.add("Neutral"); ic14.add("Agree"); ic14.add("Strongly Agree");
         
-        sub.setBounds(430, 70, 70, 20);
-        ec1.setBounds(430, 110, 35, 20);
-        ec2.setBounds(430, 130, 35, 20);
-        ec3.setBounds(430, 150, 35, 20);
-        ec4.setBounds(430, 170, 35, 20);
-        ec5.setBounds(430, 190, 35, 20);
-        ec6.setBounds(430, 210, 35, 20);
-        ec7.setBounds(430, 230, 35, 20);
-        ec8.setBounds(430, 250, 35, 20);
-        ec9.setBounds(430, 270, 35, 20);
-        ec10.setBounds(430, 290, 35, 20);
-        ec11.setBounds(430, 310, 35, 20);
-        ec12.setBounds(430, 330, 35, 20);
-        ec13.setBounds(430, 350, 35, 20);
-        ec14.setBounds(430, 370, 35, 20);
-        ic1.setBounds(430, 410, 35, 20);
-        ic2.setBounds(430, 430, 35, 20);
-        ic3.setBounds(430, 450, 35, 20);
-        ic4.setBounds(430, 470, 35, 20);
-        ic5.setBounds(430, 490, 35, 20);
-        ic6.setBounds(430, 510, 35, 20);
-        ic7.setBounds(430, 530, 35, 20);
-        ic8.setBounds(430, 550, 35, 20);
-        ic9.setBounds(430, 570, 35, 20);
-        ic10.setBounds(430, 590, 35, 20);
-        ic11.setBounds(430, 610, 35, 20);
-        ic12.setBounds(430, 630, 35, 20);
-        ic13.setBounds(430, 650, 35, 20);
-        ic14.setBounds(430, 670, 35, 20);
+        sub.setBounds(430, 40, 70, 20);
+        ec1.setBounds(430, 80, 125, 20);
+        ec2.setBounds(430, 100, 125, 20);
+        ec3.setBounds(430, 120, 125, 20);
+        ec4.setBounds(430, 140, 125, 20);
+        ec5.setBounds(430, 160, 125, 20);
+        ec6.setBounds(430, 180, 125, 20);
+        ec7.setBounds(430, 200, 125, 20);
+        ec8.setBounds(430, 220, 125, 20);
+        ec9.setBounds(430, 240, 125, 20);
+        ec10.setBounds(430, 260, 125, 20);
+        ec11.setBounds(430, 280, 125, 20);
+        ec12.setBounds(430, 300, 125, 20);
+        ec13.setBounds(430, 320, 125, 20);
+        ec14.setBounds(430, 340, 125, 20);
+        ic1.setBounds(430, 380, 125, 20);
+        ic2.setBounds(430, 400, 125, 20);
+        ic3.setBounds(430, 420, 125, 20);
+        ic4.setBounds(430, 440, 125, 20);
+        ic5.setBounds(430, 460, 125, 20);
+        ic6.setBounds(430, 480, 125, 20);
+        ic7.setBounds(430, 500, 125, 20);
+        ic8.setBounds(430, 520, 125, 20);
+        ic9.setBounds(430, 540, 125, 20);
+        ic10.setBounds(430, 560, 125, 20);
+        ic11.setBounds(430, 580, 125, 20);
+        ic12.setBounds(430, 600, 125, 20);
+        ic13.setBounds(430, 620, 125, 20);
+        ic14.setBounds(430, 640, 125, 20);
         
         this.add(sub);
         this.add(ec1);
@@ -248,7 +252,7 @@ public class First extends Frame
         this.add(ic14);
         
         
-        Button b1 = new Button("Submit");
+        JButton b1 = new JButton("Submit");
         b1.addActionListener(new ActionListener()
         {  
             public void actionPerformed(ActionEvent e)
@@ -261,6 +265,14 @@ public class First extends Frame
 					out.write("\n".getBytes());
 					out.write("Student Roll No. : ".getBytes());
 					out.write(rollNoTextField.getText().getBytes());
+					out.write("\n".getBytes());
+					out.write("Subject Selected : ".getBytes());
+					out.write(sub.getItem(sub.getSelectedIndex()).getBytes());
+					out.write("\n".getBytes());
+					
+					float avg = getAvg();
+					out.write("OverAll Feedback : ".getBytes());
+					out.write(Float.toString(avg).getBytes());
 					out.write("\n".getBytes());
 					
 					out.write("1. Teacher is prepared for class : ".getBytes());
@@ -380,11 +392,32 @@ public class First extends Frame
             	{
 					e1.printStackTrace();
 				}            	
-            }  
+            }
+
+			public float getAvg() 
+			{
+				float avg = 0;
+				
+				Object o[] = {ec1, ec2, ec3, ec4, ec5, ec6, ec7, ec8, ec9, ec10, ec11, ec12, ec13, 
+						ec14, ic1, ic2, ic3, ic4, ic5, ic6, ic7, ic8, ic9, ic10, ic11, ic12, 
+						ic13, ic14};
+				
+				for(int i=0; i<28; i++)
+				{
+					String s = ((Choice) o[i]).getItem(((Choice) o[i]).getSelectedIndex());
+					if(s == "Strongly Agree") avg += 5;
+					else if(s == "Agree") avg += 4;
+					else if(s == "Neutral") avg += 3;
+					else if(s == "Disagree") avg += 2;
+					else avg += 1;
+				}
+				
+				return avg/28;
+			}  
         });
         
         this.add(b1);
-        b1.setBounds(300,690,70,40);
+        b1.setBounds(270,660,100,40);
     }
     
     public static void main(String[] args) 
